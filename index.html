@@ -4,137 +4,130 @@
     <meta charset="UtF-8"> 
     <meta name="viewport" 
     content="width=device-width, initial-scale=1.0"> 
-    <!--リセットCSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
-    <link rel="stylesheet" href="kuro.css">
-    
+
+    <title>yui miyoshi</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
-    <title>魔王の城</title>
-  </head> 
-
+  </head>
   <body>
     <header>
-      <div class="row">
-        <a href="" class="logo">株式会社miyoshi</a>
-        <nav>
+      <div class="container">
+        <a href="" class="logo">
+          <span>miyoshi</span>yui
+        </a>
+        <nav class="nav">
           <ul>
-            <li><a href="">会社概要</a></li>
-            <li><a href="">事業内容</a></li>
-            <li><a href="">お問合せ</a></li>
+            <li><a href="#Concept">profile</a></li>
+            <li><a href="#Service">about me</a></li>
+            <li><a href="#Contact">goal</a></li>
           </ul>
         </nav>
       </div>
     </header>
+    
+      <main>
 
-    <main>
-      <section class="main-visual">
-        <div class="container">
-          <div class="title">
-            <h1>何度負けても立ち上がる</h1>
-            <p>WE NEVER GINE UP</p>
+        <section id="hero" class="container">
+          <div class="hero_inner">
+            <p class="pop">miyoshi yui</p>
+            <h1>みよし ゆい</h1>
           </div>
-        </div>
-        <div class="purple"></div>
-      </section>
 
-      <section class="section1">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <p class="sub_title">MESSAGE</p>
-              <h2>運命から目をそらせ。<br>たとえ敗北のシナリオでも<br>我々は諦めない。</h2>
-            </div>
-            <div class="col">
+        </section>
+
+        <section id="Concept" class="container">
+          <div class="heding">welcome</div>
+          <h2 class="title">profile</h2>
+          <h3>当ページをご覧いただきありがとうございます。</h3>
+          <div class="flex"><!--横並びにするclass-->
+            <div class="column-2">
               <p class="text">
-                世界各地には多くの勇者が存在します。<br>
-                一般家庭で育った者から一流の訓練を受けた者、
-                特別な血筋を持つ勇者、神や精霊から特異な力を与えられた<br>
-                勇者など、様々な武闘派がパーティを率いています。<br>
+                青森県出身で、学生時代はピアノやフルートなど音楽が好きでした。
+                <br>社会人になってからはホテル業を6年と保険の営業を1年経験し、現在は外資系企業にて人事をしております。<br>
+                毎日沢山のお客様とお会いする中で、プログラミングの面白さに気づき、2023年9月から日々勉学に励んでおります。<br>
                 <br>
-                それら勇者の大群が我々魔王の城に攻め込んでくるのです。<br>
-                それも伝説の剣なんかを振り回して。<br>
-                <br>
-                しかも毎日のように。野蛮ですね。<br>
-                <br>
-                勇者は負けても他者の力で蘇り、経験値までも引き継ぎます。<br>
-                <br>
-                我々魔王軍にレベルアップの権利はありません。<br>
-                最初に配られたカードのみで戦うしかないのです。
+                将来は自身で起業し、より多くの企業様の業務を効率化できるようなアプリの開発や
+                売り上げアップに繋がるサイト作り〜経営戦略までのサポートを通して様々な企業様のお役に立てるよう精進しております。<br>
               </p>
-              <a href="" class="btn">MORE</a>
             </div>
+            <div class="column-2 concept-img"></div>
           </div>
-        </div>
+        </section>
 
-      </section>
-      
-      <section class="section2">
-        <div class="container">
-          <p class-sub_title>SERVICE</p>
-          <h2>事業内容</h2>
-          <div class="row">
-            <div class="col">
-              <img src="./pik/tokyo.jpeg" width="100%" alt="お城"><!--画像が読み込まれなかった時の文字-->
-              <h3>魔王城保守</h3>
+        <section id="Service" class="container">
+          <h2 class="title pop">about me</h2>
+          <div class="Service_inner flex">
+            <div class="column-40">
+              <a href="./sample/index.html"><img src="./img/hp.jpg" alt="img1"></a>
             </div>
-            <div class="col">
-              <img src="./pik/tokyo.jpeg" width="100%" alt="お城"><!--画像が読み込まれなかった時の文字-->
-              <h3>魔王城修繕</h3>
-            </div>
-            <div class="col">
-              <img src="./pik/tokyo.jpeg" width="100%" alt="お城"><!--画像が読み込まれなかった時の文字-->
-              <h3>魔王城運営</h3>
-            </div>
+              <div class="column-55">
+                <div class="heding">HP/LP</div>
+                <h3>作成事例</h3>
+                <p class="text">2024年3月よりフロントエンド領域の勉強を開始し、HTML/CSSを用いたコーディングは実際に案件として取り組んだ経験もあります。
+                  <br>JavaScriptはただいま勉強中です。
+                </p>    
+                <a href="./sample/index.html"><div class="btn">more</div></a>    
+              </div>
           </div>
-          <div class="center">
-            <a href="https://www.youtube.com/watch?v=wvLwNaYuN6Q&t=2850s" class="btn">MORE</a>
-          </div>
-        </div>
-      </section>
-      <section class="section3">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <p class-sub_title>CONTACT</p>
-              <h2>お問い合わせ</h2>
-              <p class="text">
-                過去、魔王城に乗り込んだ方より忘れ物に関するお問い合わせや謝罪の声が多く届いておりますが、<br>対応致しかねますのでご了承ください<br>
-                <br>
-                魔王城敷地内に無断で乗り込んだ場合、例外なく法的措置をとらせていただきます。
-              </p>
-              <a href="" class="btn">MORE</a>
-            </div>
-            <div class="col">
-              <img src="./pik/tokyo.jpeg" width="100%" alt="お城">
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
 
-    <footer>
-      <div class="container">
-        <h2>株式会社miyoshi</h2>
-        <!-- <a href="">魔王の城</a> -->
-        <ul>
-          <li>
-            <a href="">会社概要</a>
-          </li>
-          <li>
-            <a href="">事業内容</a>
-          </li>
-          <li>
-            <a href="">お問い合わせ</a>
-          </li>
-        </ul>
-        Copyright © 2023 魔王の城 All rights reserved.
-      </div>
-    </footer>
-  </body>
-</html> 
+          <div class="Service_inner flex">
+            <div class="column-40">
+              <a href=""><img src="./img/WordPress.jpg" alt="img2"></a>
+            </div>
+              <div class="column-55">
+                <div class="heding">Next</div>
+                <h3>今後身につけたいスキル</h3>
+                <p class="text">言語・・・SQL,PHP,Laravel,Java
+                <br>デザインスキル・・・Photoshop,Illustrator,shopify
+                </p>        
+              </div>
+          </div>
+
+          <div class="Service_inner flex">
+            <div class="column-40">
+              <a href=""><img src="./img/ec.jpg" alt="img3"></a>
+            </div>
+              <div class="column-55">
+                <div class="heding">Point</div>
+                <h3>私の強み</h3>
+                <p class="text">負けず嫌いなため、努力を惜しみません。
+                  <br>負けず嫌いが故に落ち込むこともありますが、マイナスの力を原動力にプラスに変えることができます。
+                </p>        
+              </div>
+          </div>
+        </section>
+        <section id="Contact" class="section3">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <p class="title">goal</p>
+                <h2>将来像</h2>
+                <p class="text">
+                  1年後・・・1人で現場を安心して任せていただける<br>
+                  3年後・・・ディレクションができる<br>
+                </p>
+                <p>幅広く知識を身につけていく中で、自分の強みを見つけていき、広い視野で物事を見ていけるような存在になります。<br>
+                  その中で積み上げてきた経験をもとに後輩にも教育をしていけるような立場になります。
+                </p>
+                <a href="mailto:myui19980805@gmail.com" class="btn">mail</a>
+              </div>
+              <div class="col">
+                <img src="./img/disney.jpg" width="100%" alt="お城">
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <a href="" class="logo"><!--ロゴ-->
+          <span>miyoshi</span>yui
+        </a>
+      </footer>
+    </body>
+</html>
