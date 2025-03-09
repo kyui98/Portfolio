@@ -107,7 +107,6 @@ productBoxes.forEach((target) => {
     defaults: {
       autoAlpha: 0,
       filter: "blur(30px)",
-      x: -100,
       y: 100,
       duration: 0.75,
     },
