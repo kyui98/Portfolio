@@ -625,15 +625,23 @@ products
   /* 3つ目の背景色 */
 }
 
+.products_text {
+  height: 150px;
+}
+
 .products_btn {
-  text-align: center;
   display: inline-block;
   background: #333;
   border-radius: 50px;
   line-height: 55px;
   width: 150px;
   margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+
 }
+
 
 
 @media only screen and (max-width: 1010px) {
@@ -981,61 +989,149 @@ voice
 -------------------------------------------*/
 #voice {
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  background-image: url(../img/ph_homemv02.jpg);
-  height: 450px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-
-}
-
-
-.voice_grop {
-  height: 330px !important;
-  padding: 0 2rem;
-  background: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 60px 0 40px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  margin: 80px 0;
 }
 
-.voice_grop p {
-  letter-spacing: -0.015em;
-  padding-bottom: 20px;
-}
-
-.voice_grop span {
-  color: #A0A0A0;
-  display: block;
-}
-
-
-.voice_container {
-  position: relative;
+.voice_wrap {
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  z-index: 1;
+  overflow: hidden;
 }
 
-@media only screen and (max-width: 1280px) {
+.voice_track {
+  opacity: 0.6;
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 20s linear infinite;
+}
 
-  .voice_grop {
-    width: 380px !important;
-    /* 常に固定サイズ */
-    height: 230px !important;
-    /* 常に固定サイズ */
-    flex: 0 0 380px !important;
-    /* flexの影響を防ぐ */
+.voice_track img {
+  width: 300px; /* 画像の幅を指定 */
+  aspect-ratio: 3 / 2; /* 3:2 の比率に設定 */
+  object-fit: cover; /* 画像を枠内にフィット */
+  border-radius: 0px;
+}
 
+/* スライドアニメーション */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* 50% で1セット分が流れ終わるように調整 */
   }
 }
 
+/* ボタンスタイル */
+.voice_btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.voice_btn:hover {
+  background-color: #555;
+}
 
 
 
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+footer {
+  margin-top: 50px;
+  background: #e1d5d1;
+  color: #fff;
+}
+
+.footer_wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 143px;
+  box-sizing: border-box;/*width100%の中にpaddingの値を含める*/
+  width: 100%;
+}
+
+.footer_wrapper img {
+  width: 84px;
+  height: auto;
+  padding-bottom: 24px;
+
+}
+
+footer nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+footer nav ul li {
+  font-size: 14px;
+}
+
+footer nav ul li a {
+  color: #fff;
+
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 15px;
+  padding-top: 15px;
+  position: relative;
+}
+
+footer p::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 768px) {
+.footer_wrapper {
+  max-width: 324px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0px;
+}
+
+.footer_wrapper img {
+  padding-bottom: 24px;
+
+}
+
+footer nav ul {
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+footer p {
+  padding-top: 20px;
+}
+
+}
