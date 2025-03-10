@@ -2,6 +2,21 @@
 // GSAPとSplitTextのプラグインを登録
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
+// 共通のSplitText処理を関数化
+function splitAndAnimate(selector, staggerDelay) {
+  const split = new SplitText(selector, { type: "words,chars,lines" });
+  const chars = split.chars;
+  gsap.set(chars, { autoAlpha: 0, scale: 0, y: 30, rotationX: 10 });
+  return gsap.to(chars, {
+    autoAlpha: 1,
+    scale: 1,
+    y: 0,
+    rotationX: 0,
+    stagger: staggerDelay,
+    transformOrigin: "0% 50%",
+    ease: "power2.out",
+  });
+}
 
 // start -----------------------------------------------------------------------------------//
 //
@@ -34,6 +49,23 @@ headerAnimation
 .from('.first-view .splide', { autoAlpha: 0, y: 200, x: 200 }, '<')
 
 
+// start -----------------------------------------------------------------------------------//
+//
+//			.whatのアニメーション
+//
+
+const whatAnimation = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".what",
+		start: 'top 60%',
+	},
+});
+  
+whatAnimation
+.from(".what .back p", { autoAlpha: 0, y: -100 }, "<=0.1")
+.from(".what .container .mark-wrapper ul li", { autoAlpha: 0, y: 100, stagger: 0.2 }, "<")
+.add(splitAndAnimate(".what .container .text h2", 0.04), "<")
+.add(splitAndAnimate(".what .container .text .sentence", 0.01), "<=0.15")
 
 
 // start -----------------------------------------------------------------------------------//
@@ -55,23 +87,10 @@ conceptAnimation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // start -----------------------------------------------------------------------------------//
 //
 //			.productsのアニメーション
 //
-
-
 // title アニメーション
 const productsTitleAnimation = gsap.timeline({
   defaults: {
