@@ -5,6 +5,7 @@ body {
   line-height: 1.8;
   font-family: "Noto Serif JP", serif;
   letter-spacing: 1.2px;
+  overflow-x: hidden;
 
 }
 
@@ -362,6 +363,7 @@ header
 concept
 -------------------------------------------*/
 #concept {
+  overflow-x: hidden;
   width: 100%;
   max-width: 1300px;
   margin: 100px auto;
@@ -568,6 +570,7 @@ slid
 products
 -------------------------------------------*/
 #products {
+  overflow-x: hidden;
   width: 100%;
   max-width: 1300px;
   margin: 70px auto;
@@ -922,6 +925,8 @@ use
   display: flex;
   justify-content: space-between;
   padding: 50px 0;
+  flex-wrap: wrap;
+
 }
 
 /* 各 .use_grop の右上に番号を振る */
@@ -945,7 +950,7 @@ use
 }
 
 .use_grop p {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .use_discription {
@@ -1049,6 +1054,14 @@ voice
 }
 
 
+@media only screen and (max-width: 520px) {
+  .voice_track {
+    opacity: 0.6;
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 10s linear infinite;
+  }
+}
 
 /*-------------------------------------------
 footer
@@ -1135,4 +1148,405 @@ footer p {
   padding-top: 20px;
 }
 
+}
+
+.what {
+  overflow: hidden;
+  position: relative;
+  margin: 30px 0 0 0;
+  padding: 40px 0 40px 0;
+}
+.what .bg-image {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.what .bg-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.what .bg-color {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.85;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 100%);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+}
+.what .back {
+  position: relative;
+  z-index: 3;
+}
+.what .back p {
+  visibility: hidden;
+  color: #333;
+  font-family: "cinzel";
+  line-height: 1.25;
+  opacity: 0.6;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 80px;
+}
+.what .container {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0 auto 0;
+}
+.what .container .mark-wrapper {
+  width: 600px;
+}
+.what .container .mark-wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0 0;
+}
+.what .container .mark-wrapper ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  margin: 0 30px 0 0;
+}
+.what .container .mark-wrapper ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 3px solid rgba(139, 139, 139, 0.7);
+  border-top-color: rgb(214, 214, 214);
+  border-radius: 50%;
+  animation: what-mark-spin 3s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+}
+@keyframes what-mark-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.what .container .mark-wrapper ul li p {
+  color: #333;
+  text-align: center;
+  font-size: 22px;
+}
+.what .container .mark-wrapper ul li.cg {
+  width: 100px;
+}
+.what .container .mark-wrapper ul li.cg p {
+  font-family: "cinzel";
+  font-size: 55px;
+}
+.what .container .mark-wrapper ul li.cg::after {
+  display: none;
+}
+.what .container .mark-wrapper ul li:last-child {
+  margin: 0 0 0 0;
+}
+.what .container .mark-wrapper ul:nth-child(1) li:nth-child(2)::after {
+  animation-delay: 0.4s;
+}
+.what .container .mark-wrapper ul:nth-child(2) li:nth-child(1)::after {
+  animation-delay: 0.8s;
+}
+.what .container .mark-wrapper ul:nth-child(2) li:nth-child(3)::after {
+  animation-delay: 1.2s;
+}
+.what .container .mark-wrapper ul:nth-child(3) {
+  margin: -30px 0 0 0;
+}
+.what .container .mark-wrapper ul:nth-child(3) li:nth-child(1)::after {
+  animation-delay: 1.6s;
+}
+.what .container .text {
+  color: #333;
+  width: 40%;
+  padding: 0 0 0 80px;
+}
+.what .container .text h2 .catch {
+  font-weight: 500;
+  font-size: 42px;
+}
+.what .container .text .sentence {
+  margin: 30px 0 0 0;
+}
+.what .container .text .sentence p {
+  line-height: 2;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding: 25px 0 25px 0;
+}
+
+/**********************************************************************************
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □  
+
+◆	Stylesheet: 1024px～1280px(iPad縦からiPad横)までのモニタで適用	◆
+
+start----------------------------------------------------------------------------*/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 40px 0 40px 0;
+  }
+  .what .bg-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 5px;
+    font-size: 70px;
+  }
+  .what .container {
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 520px;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    width: 180px;
+    height: 180px;
+    margin: 0 20px 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 20px;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 100px;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 50px;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 520px);
+    padding: 0 25px 0 25px;
+  }
+  .what .container .text h2 .catch {
+    font-size: 40px;
+  }
+  .what .container .text .sentence {
+    margin: 30px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 17px;
+    padding: 25px 0 25px 0;
+  }
+} /* 1024px～1280px responsive-close
+
+
+
+/**********************************************************************************
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □  
+
+◆	Stylesheet: 768px～1023px(iPad縦からiPad横)までのモニタで適用	◆
+
+start----------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 40px 0 40px 0;
+  }
+  .what .bg-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 5px;
+    font-size: 70px;
+  }
+  .what .container {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 520px;
+    margin: 0 auto 0;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    width: 180px;
+    height: 180px;
+    margin: 0 20px 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 20px;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 100px;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 50px;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 0px);
+    padding: 30px 4% 0 4%;
+  }
+  .what .container .text h2 .catch {
+    text-align: center;
+    font-size: 40px;
+  }
+  .what .container .text .sentence {
+    margin: 20px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 17px;
+    padding: 25px 0 25px 0;
+  }
+} /* 768px～1023px responsive-closed */
+/*end ----------------------------------------------------------------------------
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+**********************************************************************************/
+/**********************************************************************************
+ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+
+◆	Stylesheet: 767pxまで(スマホ)のモニタで適用	◆
+
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+start----------------------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 20px 0 40px 0;
+  }
+  .what .bg-image img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 3px;
+    font-size: 9vw;
+  }
+  .what .container {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 100%;
+    margin: 0 auto 0;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    margin: 0 2vw 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 4vw;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 20vw;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 10vw;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .mark-wrapper ul:nth-child(3) {
+    margin: -20px 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 20%);
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+}
+  .what .container .text h2 .catch {
+    text-align: center;
+    font-size: 7.25vw;
+  }
+  .what .container .text .sentence {
+    margin: 15px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 4vw;
+    padding: 20px 0 20px 0;
+  }
 }
