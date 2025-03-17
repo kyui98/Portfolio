@@ -177,7 +177,9 @@ header
 
 }
 
-
+/*-------------------------------------------
+first-view
+-------------------------------------------*/
 .first-view {
   display: flex;
   align-items: flex-start;
@@ -186,23 +188,23 @@ header
   padding: 0 0 0 3%;
 }
 
-.splide {
+.first-view-splide {
   width: 50vw;
 }
 
-.splide .splide__track {
+.first-view-splide .splide__track {
   width: 100%;
 }
 
-.splide .splide__list {
+.first-view-splide .splide__list {
   width: 100%;
 }
 
-.splide .splide__slide {
+.first-view-splide .splide__slide {
   width: 100%;
 }
 
-.splide .splide__slide .thumb {
+.first-view-splide .splide__slide .thumb {
   overflow: hidden;
   position: relative;
   right: -5vw;
@@ -212,7 +214,7 @@ header
   height: 50vw;
 }
 
-.splide .splide__slide .thumb img {
+.first-view-splide .splide__slide .thumb img {
   border-radius: 50%;
   transition: 8s ease-out;
   object-fit: cover;
@@ -220,7 +222,7 @@ header
   height: 100%;
 }
 
-.splide .splide__slide.is-active .thumb img {
+.first-view-splide .splide__slide.is-active .thumb img {
   transform: scale(1.15);
 }
 
@@ -357,163 +359,388 @@ header
       font-size: 4vw;
   }
 }
-
-
 /*-------------------------------------------
-concept
+what
 -------------------------------------------*/
-#concept {
-  overflow-x: hidden;
+.what {
+  overflow: hidden;
+  position: relative;
+  margin: 30px 0 0 0;
+  padding: 40px 0 40px 0;
+}
+.what .bg-image {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1300px;
-  margin: 100px auto;
+  height: 100%;
 }
-
-.top_concept_wrap {
+.what .bg-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.what .bg-color {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.85;
+  left: 0;
+  top: 0;
+  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 100%);
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+}
+.what .back {
+  position: relative;
+  z-index: 3;
+}
+.what .back p {
+  visibility: hidden;
+  color: #333;
+  font-family: "cinzel";
+  line-height: 1.25;
+  opacity: 0.6;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 80px;
+}
+.what .container {
+  position: relative;
+  z-index: 4;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  text-align: left;
-  flex-wrap: nowrap;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0 auto 0;
 }
-
-.top_concept_wrap img {
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
+.what .container .mark-wrapper {
+  width: 600px;
 }
-
-.concept_text {
-  padding: 0 4rem;
-  width: 50%;
+.what .container .mark-wrapper ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0 0;
 }
-
-.concept_text h2 {
-  font-size: 3rem;
+.what .container .mark-wrapper ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  margin: 0 30px 0 0;
 }
-
-.concept_text h3 {
-  font-size: 1.75rem;
-  padding: 1rem 0;
+.what .container .mark-wrapper ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 3px solid rgba(139, 139, 139, 0.7);
+  border-top-color: rgb(214, 214, 214);
+  border-radius: 50%;
+  animation: what-mark-spin 3s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
 }
-
-.concept_text p {
-  font-size: 1rem;
-  padding-bottom: 1rem;
-}
-
-@media only screen and (max-width: 1080px) {
-  .concept_text {
-    padding: 0 2rem;
-  }
-
-  .concept_text h2 {
-    font-size: 2.6rem;
-  }
-
-  .concept_text h3 {
-    font-size: 1.4rem;
-  }
-
-  .concept_text p {
-    font-size: 0.9rem;
+@keyframes what-mark-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
-
-@media only screen and (max-width: 1010px) {
-  .concept_text h3 {
-    font-size: 1.2rem;
-  }
-
-  .concept_text p {
-    font-size: 0.8rem;
-  }
+.what .container .mark-wrapper ul li p {
+  color: #333;
+  text-align: center;
+  font-size: 22px;
+}
+.what .container .mark-wrapper ul li.cg {
+  width: 100px;
+}
+.what .container .mark-wrapper ul li.cg p {
+  font-family: "cinzel";
+  font-size: 55px;
+}
+.what .container .mark-wrapper ul li.cg::after {
+  display: none;
+}
+.what .container .mark-wrapper ul li:last-child {
+  margin: 0 0 0 0;
+}
+.what .container .mark-wrapper ul:nth-child(1) li:nth-child(2)::after {
+  animation-delay: 0.4s;
+}
+.what .container .mark-wrapper ul:nth-child(2) li:nth-child(1)::after {
+  animation-delay: 0.8s;
+}
+.what .container .mark-wrapper ul:nth-child(2) li:nth-child(3)::after {
+  animation-delay: 1.2s;
+}
+.what .container .mark-wrapper ul:nth-child(3) {
+  margin: -30px 0 0 0;
+}
+.what .container .mark-wrapper ul:nth-child(3) li:nth-child(1)::after {
+  animation-delay: 1.6s;
+}
+.what .container .text {
+  color: #333;
+  width: 40%;
+  padding: 0 0 0 80px;
+}
+.what .container .text h2 .catch {
+  font-weight: 500;
+  font-size: 42px;
+}
+.what .container .text .sentence {
+  margin: 30px 0 0 0;
+}
+.what .container .text .sentence p {
+  line-height: 2;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding: 25px 0 25px 0;
 }
 
-@media only screen and (max-width: 768px) {
-
-  #concept {
-    width: 90%;
-    max-width: 1300px;
-    margin: 100px auto;
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 40px 0 40px 0;
   }
-
-  .top_concept_wrap {
-    flex-direction: column-reverse;
-    text-align: left;
-    flex-wrap: nowrap;
-  }
-
-  .top_concept_wrap img {
+  .what .bg-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
+  }
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 5px;
+    font-size: 70px;
+  }
+  .what .container {
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 520px;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    width: 180px;
+    height: 180px;
+    margin: 0 20px 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 20px;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 100px;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 50px;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 520px);
+    padding: 0 25px 0 25px;
+  }
+  .what .container .text h2 .catch {
+    font-size: 40px;
+  }
+  .what .container .text .sentence {
+    margin: 30px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 17px;
+    padding: 25px 0 25px 0;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 40px 0 40px 0;
+  }
+  .what .bg-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
+  }
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 5px;
+    font-size: 70px;
+  }
+  .what .container {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 520px;
+    margin: 0 auto 0;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    width: 180px;
+    height: 180px;
+    margin: 0 20px 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 20px;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 100px;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 50px;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 20%);
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+}
+  .what .container .text h2 .catch {
+    text-align: center;
+    font-size: 40px;
+  }
+  .what .container .text .sentence {
+    margin: 20px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 17px;
+    padding: 25px 0 25px 0;
+  }
+} /* 768px～1023px responsive-closed */
+
+@media screen and (max-width: 767px) {
+  .what {
+    margin: 30px 0 0 0;
+    padding: 20px 0 40px 0;
+  }
+  .what .bg-image img {
+    -o-object-fit: cover;
     object-fit: cover;
-  }
-
-  .concept_text {
     width: 100%;
-    padding: 2rem 0.1rem;
+    height: 100%;
   }
-
-  .concept_text h2 {
-    font-size: 3rem;
+  .what .bg-color {
+    z-index: 2;
+    opacity: 0.85;
   }
-
-  .concept_text h3 {
-    font-size: 2rem;
-    padding: 1.5rem 0;
+  .what .back p {
+    line-height: 1.25;
+    opacity: 0.6;
+    letter-spacing: 3px;
+    font-size: 9vw;
   }
-
-  .concept_text p {
-    font-size: 1rem;
-    padding-bottom: 1rem;
+  .what .container {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto 0;
+  }
+  .what .container .mark-wrapper {
+    width: 100%;
+    margin: 0 auto 0;
+  }
+  .what .container .mark-wrapper ul {
+    margin: 20px 0 0 0;
+  }
+  .what .container .mark-wrapper ul li {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    margin: 0 2vw 0 0;
+  }
+  .what .container .mark-wrapper ul li::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .what .container .mark-wrapper ul li p {
+    font-size: 4vw;
+  }
+  .what .container .mark-wrapper ul li.cg {
+    width: 20vw;
+  }
+  .what .container .mark-wrapper ul li.cg p {
+    font-size: 10vw;
+  }
+  .what .container .mark-wrapper ul li.cg::after {
+    display: none;
+  }
+  .what .container .mark-wrapper ul li:last-child {
+    margin: 0 0 0 0;
+  }
+  .what .container .mark-wrapper ul:nth-child(3) {
+    margin: -20px 0 0 0;
+  }
+  .what .container .text {
+    width: calc(100% - 20%);
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+}
+  .what .container .text h2 .catch {
+    text-align: center;
+    font-size: 7.25vw;
+  }
+  .what .container .text .sentence {
+    margin: 15px 0 0 0;
+  }
+  .what .container .text .sentence p {
+    line-height: 2;
+    letter-spacing: 1px;
+    font-size: 4vw;
+    padding: 20px 0 20px 0;
   }
 }
-
-@media only screen and (max-width: 600px) {
-  .concept_text h2 {
-    font-size: 2.7rem;
-  }
-
-  .concept_text h3 {
-    font-size: 1.6rem;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  #concept {
-    margin: 50px auto;
-  }
-
-  .concept_text h2 {
-    font-size: 2.2rem;
-  }
-
-  .concept_text h3 {
-    font-size: 1.3rem;
-  }
-
-  .concept_text p {
-    padding-bottom: 0.6rem;
-  }
-
-}
-
-@media only screen and (max-width: 414px) {
-  .concept_text h2 {
-    font-size: 2rem;
-  }
-
-  .concept_text h3 {
-    font-size: 1.1rem;
-  }
-
-  .concept_text p {
-    font-size: 0.8rem;
-  }
-}
-
 /*-------------------------------------------
 slid
 -------------------------------------------*/
@@ -719,6 +946,176 @@ products
 }
 
 /*-------------------------------------------
+concept
+-------------------------------------------*/
+#concept {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 1300px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.top_concept_wrap {
+  display: flex;
+  padding: 0 5% 0 5%;
+}
+
+.icon {
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  width: 50%;
+  z-index: -1;
+}
+
+.icon img {
+  width: 250px;
+  animation: 6s fuwafuwa infinite;
+}
+
+@keyframes fuwafuwa {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+
+
+.concept_text {
+  width: 50%;
+}
+
+.concept_text h2 {
+  font-size: 3rem;
+}
+
+.concept_text h3 {
+  font-size: 1.75rem;
+  padding: 1rem 0;
+}
+
+.concept_text p {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1080px) {
+  .concept_text {
+    padding: 0 2rem;
+  }
+
+  .concept_text h2 {
+    font-size: 2.6rem;
+  }
+
+  .concept_text h3 {
+    font-size: 1.4rem;
+  }
+
+  .concept_text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .concept_text h3 {
+    font-size: 1.2rem;
+  }
+
+  .concept_text p {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  #concept {
+    width: 90%;
+    max-width: 1300px;
+    margin: 100px auto;
+  }
+
+  .top_concept_wrap {
+    flex-direction: column-reverse;
+    text-align: left;
+    flex-wrap: nowrap;
+  }
+
+  .top_concept_wrap img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .concept_text {
+    width: 100%;
+    padding: 2rem 0.1rem;
+  }
+
+  .concept_text h2 {
+    font-size: 3rem;
+  }
+
+  .concept_text h3 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .concept_text p {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .concept_text h2 {
+    font-size: 2.7rem;
+  }
+
+  .concept_text h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  #concept {
+    margin: 50px auto;
+  }
+
+  .concept_text h2 {
+    font-size: 2.2rem;
+  }
+
+  .concept_text h3 {
+    font-size: 1.3rem;
+  }
+
+  .concept_text p {
+    padding-bottom: 0.6rem;
+  }
+
+}
+
+@media only screen and (max-width: 414px) {
+  .concept_text h2 {
+    font-size: 2rem;
+  }
+
+  .concept_text h3 {
+    font-size: 1.1rem;
+  }
+
+  .concept_text p {
+    font-size: 0.8rem;
+  }
+}
+
+/*-------------------------------------------
 questions
 -------------------------------------------*/
 #question {
@@ -872,14 +1269,14 @@ dd.question_text {
 }
 
 /*-------------------------------------------
-about
+contact
 -------------------------------------------*/
 #about {
   background-image: url(../img/ph_homemv02.jpg);
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  height: 765px;
+  height: 305px;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -997,14 +1394,21 @@ voice
   width: 100%;
   overflow: hidden;
   position: relative;
-  padding: 60px 0 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 80px 0;
 }
 
+
+#voice h2 {
+  flex-direction: column;
+  font-size: 32px;
+}
+
 .voice_wrap {
+  padding: 60px 0 40px 0;
+
   width: 100%;
   overflow: hidden;
 }
@@ -1150,146 +1554,145 @@ footer p {
 
 }
 
-.what {
+
+.bbb {
+  max-width: 1300px;
+  width: 90%;
+  margin: 70px auto;
+}
+
+.bbb h2 {
+  font-size: 72px;
+  padding-bottom: 50px;
+}
+
+.aaa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.voice_grop {
+  width: 32%;
+  text-align: center;
+}
+
+.voice_grop img {
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .bbb h2 {
+    font-size: 42px;
+    padding-bottom: 50px;
+  }
+
+  .aaa {
+    flex-direction: column;
+  }
+
+  .voice_grop {
+    width: 90%;
+  }
+  
+}
+
+/*===================================================================================================
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+
+〇 WORKS 〇
+
+□ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
+====================================================================================================*/
+.works {
   overflow: hidden;
   position: relative;
-  margin: 30px 0 0 0;
-  padding: 40px 0 40px 0;
+  color: #343434;
 }
-.what .bg-image {
+.works .bg {
   position: absolute;
   z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
 }
-.what .bg-image img {
+.works .title {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0 60px 0;
+}
+.works .title h3 .catch {
+  font-family: "Cinzel";
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 80px;
+}
+.works .title h2 {
+  margin: 5px 0 0 0;
+}
+.works .title h2 .catch {
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: 28px;
+}
+.works .container {
+  position: relative;
+  z-index: 2;
+  width: 94%;
+  max-width: 1480px;
+  margin: 40px auto 0;
+  padding: 0 0 70px 0;
+}
+.works .container .splide .splide__track .splide__list .splide__slide {
+  position: relative;
+  color: #000000;
+  box-shadow: rgba(153, 159, 163, 0.2) 0 7px 29px 0;
+  background: #ffffff;
+  cursor: pointer;
+}
+.works .container .splide .splide__track .splide__list .splide__slide .thumb {
+  line-height: 0;
+  width: 100%;
+  height: 400px;
+}
+.works .container .splide .splide__track .splide__list .splide__slide .thumb img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.what .bg-color {
-  position: absolute;
-  z-index: 2;
-  opacity: 0.85;
-  left: 0;
-  top: 0;
-  background: linear-gradient(90deg, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 100%);
-  mix-blend-mode: multiply;
-  width: 100%;
-  height: 100%;
+.works .container .splide .splide__track .splide__list .splide__slide .text {
+  padding: 30px 45px 30px 45px;
 }
-.what .back {
-  position: relative;
-  z-index: 3;
+.works .container .splide .splide__track .splide__list .splide__slide .text .category p {
+  display: inline-block;
+  font-family: "Cinzel";
+  font-weight: 600;
+  background: linear-gradient(90deg, #cbcbb6 0%, #d6d2b6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 4px;
+  font-size: 25px;
 }
-.what .back p {
-  visibility: hidden;
-  color: #333;
-  font-family: "cinzel";
-  line-height: 1.25;
-  opacity: 0.6;
-  letter-spacing: 5px;
-  text-align: center;
-  font-size: 80px;
-}
-.what .container {
-  position: relative;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 1920px;
-  margin: 0 auto 0;
-}
-.what .container .mark-wrapper {
-  width: 600px;
-}
-.what .container .mark-wrapper ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0 0 0;
-}
-.what .container .mark-wrapper ul li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 220px;
-  height: 220px;
-  margin: 0 30px 0 0;
-}
-.what .container .mark-wrapper ul li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 3px solid rgba(139, 139, 139, 0.7);
-  border-top-color: rgb(214, 214, 214);
-  border-radius: 50%;
-  animation: what-mark-spin 3s ease-in-out infinite;
-  width: 100%;
-  height: 100%;
-}
-@keyframes what-mark-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-.what .container .mark-wrapper ul li p {
-  color: #333;
-  text-align: center;
+.works .container .splide .splide__track .splide__list .splide__slide .text h3 .catch {
   font-size: 22px;
 }
-.what .container .mark-wrapper ul li.cg {
-  width: 100px;
+.works .container .splide .splide__track .splide__list .splide__slide .text h4 .catch {
+  font-size: 20px;
 }
-.what .container .mark-wrapper ul li.cg p {
-  font-family: "cinzel";
-  font-size: 55px;
+.works .container .splide .splide__track .splide__list .splide__slide.is-active {
+  padding: 0 0 0 0;
 }
-.what .container .mark-wrapper ul li.cg::after {
-  display: none;
-}
-.what .container .mark-wrapper ul li:last-child {
-  margin: 0 0 0 0;
-}
-.what .container .mark-wrapper ul:nth-child(1) li:nth-child(2)::after {
-  animation-delay: 0.4s;
-}
-.what .container .mark-wrapper ul:nth-child(2) li:nth-child(1)::after {
-  animation-delay: 0.8s;
-}
-.what .container .mark-wrapper ul:nth-child(2) li:nth-child(3)::after {
-  animation-delay: 1.2s;
-}
-.what .container .mark-wrapper ul:nth-child(3) {
-  margin: -30px 0 0 0;
-}
-.what .container .mark-wrapper ul:nth-child(3) li:nth-child(1)::after {
-  animation-delay: 1.6s;
-}
-.what .container .text {
-  color: #333;
-  width: 40%;
-  padding: 0 0 0 80px;
-}
-.what .container .text h2 .catch {
-  font-weight: 500;
-  font-size: 42px;
-}
-.what .container .text .sentence {
-  margin: 30px 0 0 0;
-}
-.what .container .text .sentence p {
-  line-height: 2;
-  letter-spacing: 1px;
-  font-size: 18px;
-  padding: 25px 0 25px 0;
+.works .container .splide .splide__track .splide__progress__bar {
+  background: #cccccc;
+  height: 3px;
 }
 
 /**********************************************************************************
@@ -1299,82 +1702,65 @@ footer p {
 
 start----------------------------------------------------------------------------*/
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
-  .what {
-    margin: 30px 0 0 0;
-    padding: 40px 0 40px 0;
+  .works .bg {
+    left: 0;
+    top: 0;
   }
-  .what .bg-image img {
+  .works .title {
+    padding: 60px 0 60px 0;
+  }
+  .works .title h3 .catch {
+    line-height: 1.25;
+    letter-spacing: 5px;
+    font-size: 80px;
+  }
+  .works .title h2 {
+    margin: 5px 0 0 0;
+  }
+  .works .title h2 .catch {
+    letter-spacing: 4px;
+    font-size: 28px;
+  }
+  .works .container {
+    width: 96%;
+    max-width: 1480px;
+    margin: 40px auto 0;
+    padding: 0 0 70px 0;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide {
+    width: 50%;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb {
+    line-height: 0;
+    width: 100%;
+    height: 400px;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
     height: 100%;
   }
-  .what .bg-color {
-    z-index: 2;
-    opacity: 0.85;
+  .works .container .splide .splide__track .splide__list .splide__slide .text {
+    padding: 30px 30px 30px 30px;
   }
-  .what .back p {
-    line-height: 1.25;
-    opacity: 0.6;
-    letter-spacing: 5px;
-    font-size: 70px;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category p {
+    letter-spacing: 4px;
+    font-size: 24px;
   }
-  .what .container {
-    max-width: 100%;
-    margin: 20px auto 0;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category h3 .catch {
+    font-size: 21px;
   }
-  .what .container .mark-wrapper {
-    width: 520px;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category h4 .catch {
+    font-size: 19px;
   }
-  .what .container .mark-wrapper ul {
-    margin: 20px 0 0 0;
+  .works .container .splide .splide__track .splide__list .splide__slide.is-active {
+    padding: 0 0 0 0;
   }
-  .what .container .mark-wrapper ul li {
-    width: 180px;
-    height: 180px;
-    margin: 0 20px 0 0;
+  .works .container .splide .splide__track .splide__progress__bar {
+    height: 3px;
   }
-  .what .container .mark-wrapper ul li::after {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .what .container .mark-wrapper ul li p {
-    font-size: 20px;
-  }
-  .what .container .mark-wrapper ul li.cg {
-    width: 100px;
-  }
-  .what .container .mark-wrapper ul li.cg p {
-    font-size: 50px;
-  }
-  .what .container .mark-wrapper ul li.cg::after {
-    display: none;
-  }
-  .what .container .mark-wrapper ul li:last-child {
-    margin: 0 0 0 0;
-  }
-  .what .container .text {
-    width: calc(100% - 520px);
-    padding: 0 25px 0 25px;
-  }
-  .what .container .text h2 .catch {
-    font-size: 40px;
-  }
-  .what .container .text .sentence {
-    margin: 30px 0 0 0;
-  }
-  .what .container .text .sentence p {
-    line-height: 2;
-    letter-spacing: 1px;
-    font-size: 17px;
-    padding: 25px 0 25px 0;
-  }
-} /* 1024px～1280px responsive-close
-
-
-
+} /* 1024px～1280px responsive-close */
 /**********************************************************************************
 □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □  
 
@@ -1382,81 +1768,63 @@ start---------------------------------------------------------------------------
 
 start----------------------------------------------------------------------------*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .what {
-    margin: 30px 0 0 0;
-    padding: 40px 0 40px 0;
+  .works .bg {
+    left: 0;
+    top: 0;
   }
-  .what .bg-image img {
+  .works .title {
+    padding: 60px 0 60px 0;
+  }
+  .works .title h3 .catch {
+    line-height: 1.25;
+    letter-spacing: 5px;
+    font-size: 80px;
+  }
+  .works .title h2 {
+    margin: 5px 0 0 0;
+  }
+  .works .title h2 .catch {
+    letter-spacing: 4px;
+    font-size: 28px;
+  }
+  .works .container {
+    width: 96%;
+    max-width: 1480px;
+    margin: 40px auto 0;
+    padding: 0 0 70px 0;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide {
+    width: 50%;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb {
+    line-height: 0;
+    width: 100%;
+    height: 300px;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb img {
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
     height: 100%;
   }
-  .what .bg-color {
-    z-index: 2;
-    opacity: 0.85;
+  .works .container .splide .splide__track .splide__list .splide__slide .text {
+    padding: 30px 20px 30px 20px;
   }
-  .what .back p {
-    line-height: 1.25;
-    opacity: 0.6;
-    letter-spacing: 5px;
-    font-size: 70px;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category p {
+    letter-spacing: 4px;
+    font-size: 22px;
   }
-  .what .container {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto 0;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category h3 .catch {
+    font-size: 19px;
   }
-  .what .container .mark-wrapper {
-    width: 520px;
-    margin: 0 auto 0;
-  }
-  .what .container .mark-wrapper ul {
-    margin: 20px 0 0 0;
-  }
-  .what .container .mark-wrapper ul li {
-    width: 180px;
-    height: 180px;
-    margin: 0 20px 0 0;
-  }
-  .what .container .mark-wrapper ul li::after {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .what .container .mark-wrapper ul li p {
-    font-size: 20px;
-  }
-  .what .container .mark-wrapper ul li.cg {
-    width: 100px;
-  }
-  .what .container .mark-wrapper ul li.cg p {
-    font-size: 50px;
-  }
-  .what .container .mark-wrapper ul li.cg::after {
-    display: none;
-  }
-  .what .container .mark-wrapper ul li:last-child {
-    margin: 0 0 0 0;
-  }
-  .what .container .text {
-    width: calc(100% - 20%);
-    padding: 30px 0 0 0;
-    margin: 0 auto;
-}
-  .what .container .text h2 .catch {
-    text-align: center;
-    font-size: 40px;
-  }
-  .what .container .text .sentence {
-    margin: 20px 0 0 0;
-  }
-  .what .container .text .sentence p {
-    line-height: 2;
-    letter-spacing: 1px;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category h4 .catch {
     font-size: 17px;
-    padding: 25px 0 25px 0;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide.is-active {
+    padding: 0 0 0 0;
+  }
+  .works .container .splide .splide__track .splide__progress__bar {
+    height: 3px;
   }
 } /* 768px～1023px responsive-closed */
 /*end ----------------------------------------------------------------------------
@@ -1470,84 +1838,62 @@ start---------------------------------------------------------------------------
 □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ □ 
 start----------------------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
-  .what {
-    margin: 30px 0 0 0;
-    padding: 20px 0 40px 0;
-  }
-  .what .bg-image img {
-    -o-object-fit: cover;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .what .bg-color {
-    z-index: 2;
-    opacity: 0.85;
-  }
-  .what .back p {
-    line-height: 1.25;
-    opacity: 0.6;
-    letter-spacing: 3px;
-    font-size: 9vw;
-  }
-  .what .container {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto 0;
-  }
-  .what .container .mark-wrapper {
-    width: 100%;
-    margin: 0 auto 0;
-  }
-  .what .container .mark-wrapper ul {
-    margin: 20px 0 0 0;
-  }
-  .what .container .mark-wrapper ul li {
-    position: relative;
-    width: 32vw;
-    height: 32vw;
-    margin: 0 2vw 0 0;
-  }
-  .what .container .mark-wrapper ul li::after {
+  .works .bg {
     left: 0;
     top: 0;
+  }
+  .works .title {
+    padding: 60px 0 60px 0;
+  }
+  .works .title h3 .catch {
+    line-height: 1.25;
+    letter-spacing: 2px;
+    font-size: 10vw;
+  }
+  .works .title h2 {
+    margin: 5px 0 0 0;
+  }
+  .works .title h2 .catch {
+    letter-spacing: 4px;
+    font-size: 6vw;
+  }
+  .works .container {
+    width: 96%;
+    max-width: 1480px;
+    margin: 5px auto 0;
+    padding: 0 0 55px 0;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide {
+    width: 50%;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb {
+    line-height: 0;
+    width: 100%;
+    height: 300px;
+  }
+  .works .container .splide .splide__track .splide__list .splide__slide .thumb img {
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
     height: 100%;
   }
-  .what .container .mark-wrapper ul li p {
-    font-size: 4vw;
+  .works .container .splide .splide__track .splide__list .splide__slide .text {
+    padding: 30px 30px 30px 30px;
   }
-  .what .container .mark-wrapper ul li.cg {
-    width: 20vw;
+  .works .container .splide .splide__track .splide__list .splide__slide .text .category p {
+    letter-spacing: 4px;
+    font-size: 5vw;
   }
-  .what .container .mark-wrapper ul li.cg p {
-    font-size: 10vw;
+  .works .container .splide .splide__track .splide__list .splide__slide .text h3 .catch {
+    font-size: 4.5vw;
   }
-  .what .container .mark-wrapper ul li.cg::after {
-    display: none;
+  .works .container .splide .splide__track .splide__list .splide__slide .text h4 .catch {
+    font-size: 3.5vw;
   }
-  .what .container .mark-wrapper ul li:last-child {
-    margin: 0 0 0 0;
+  .works .container .splide .splide__track .splide__list .splide__slide.is-active {
+    padding: 0 0 0 0;
   }
-  .what .container .mark-wrapper ul:nth-child(3) {
-    margin: -20px 0 0 0;
+  .works .container .splide .splide__track .splide__progress__bar {
+    height: 3px;
   }
-  .what .container .text {
-    width: calc(100% - 20%);
-    padding: 30px 0 0 0;
-    margin: 0 auto;
-}
-  .what .container .text h2 .catch {
-    text-align: center;
-    font-size: 7.25vw;
-  }
-  .what .container .text .sentence {
-    margin: 15px 0 0 0;
-  }
-  .what .container .text .sentence p {
-    line-height: 2;
-    letter-spacing: 1px;
-    font-size: 4vw;
-    padding: 20px 0 20px 0;
-  }
-}
+} /* 767px responsive-closed */
