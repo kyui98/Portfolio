@@ -72,19 +72,24 @@ whatAnimation
 //
 //			.conceptのアニメーション
 //
-const conceptAnimation= gsap.timeline({
-	scrollTrigger: {
-		trigger: ".concept",
-		start:'top 45%',
-	},
+const conceptAnimation = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".concept",
+    start: 'top 45%',
+  },
 });
 
 conceptAnimation
-.from(".concept img", { autoAlpha: 0, filter: "blur(30px)", x:100, y:100, duration:1.75})
-.from(".concept .concept_text h2",{ autoAlpha: 0, y:-50 },"<=0.5")
-.from(".concept .concept_text h3",{ autoAlpha: 0, y:50 },"<=0.1")
-.from(".concept .concept_text p",{ autoAlpha: 0, y:100, duration:1.5 },"<=1")
-
+  .from(".concept .concept_text h2", { autoAlpha: 0, x: 50 }, "<=0.5")
+  .from(".concept .concept_text h3", { autoAlpha: 0, y: 50 }, "<=0.1")
+  .from(".concept .concept_text p", { autoAlpha: 0, y: 100, duration: 1.5 }, "<=1")
+  .from(".concept .icon", { 
+    opacity: 0,    // opacity 0 からスタート
+    y: 30,         // y方向に30px移動
+    duration: 0.8, // アニメーション時間
+    ease: "power2.out",
+    onComplete: () => gsap.to(".concept .icon", { opacity: 0.4 }) // 最終的に0.6で固定
+  }, "<=0.3");
 
 
 // start -----------------------------------------------------------------------------------//
@@ -146,6 +151,23 @@ productBoxes.forEach((target) => {
 
 
 
+// start -----------------------------------------------------------------------------------//
+//
+//			.worksのアニメーション
+//
+
+const worksAnimation= gsap.timeline({
+	scrollTrigger: {
+		trigger: ".works",
+		start:'top 45%',
+	},
+});
+
+worksAnimation
+.from(".works .bg", { autoAlpha: 0, filter: "blur(30px)", x:100, y:100, duration:1.75})
+.from(".works .title h3",{ autoAlpha: 0, y:-50 },"<=0.5")
+.from(".works .title h2",{ autoAlpha: 0, y:50 },"<=0.1")
+.from(".works .splide",{ autoAlpha: 0, y:100, duration:1.5 },"<=1")
 
 
 
